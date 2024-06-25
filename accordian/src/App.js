@@ -1,6 +1,4 @@
 import Accordian from './components/Accordian.jsx';
-// import picture from './images/picture.webp';
-
 import './App.css';
 
 function App() {
