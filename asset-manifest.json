@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/25_react_projects/static/css/main.21e47402.css",
-    "main.js": "/25_react_projects/static/js/main.2df7f56b.js",
-    "static/js/453.9d50e167.chunk.js": "/25_react_projects/static/js/453.9d50e167.chunk.js",
-    "static/media/picture.webp": "/25_react_projects/static/media/picture.fe38b7aa6c11357af501.webp",
-    "index.html": "/25_react_projects/index.html",
-    "main.21e47402.css.map": "/25_react_projects/static/css/main.21e47402.css.map",
-    "main.2df7f56b.js.map": "/25_react_projects/static/js/main.2df7f56b.js.map",
-    "453.9d50e167.chunk.js.map": "/25_react_projects/static/js/453.9d50e167.chunk.js.map"
+    "main.css": "/25_react_projects/accordian/static/css/main.d28c0d18.css",
+    "main.js": "/25_react_projects/accordian/static/js/main.b55aa0a3.js",
+    "static/js/453.9d50e167.chunk.js": "/25_react_projects/accordian/static/js/453.9d50e167.chunk.js",
+    "static/media/picture.webp": "/25_react_projects/accordian/static/media/picture.fe38b7aa6c11357af501.webp",
+    "index.html": "/25_react_projects/accordian/index.html",
+    "main.d28c0d18.css.map": "/25_react_projects/accordian/static/css/main.d28c0d18.css.map",
+    "main.b55aa0a3.js.map": "/25_react_projects/accordian/static/js/main.b55aa0a3.js.map",
+    "453.9d50e167.chunk.js.map": "/25_react_projects/accordian/static/js/453.9d50e167.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.21e47402.css",
-    "static/js/main.2df7f56b.js"
+    "static/css/main.d28c0d18.css",
+    "static/js/main.b55aa0a3.js"
   ]
 }
