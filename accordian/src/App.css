@@ -1,3 +1,33 @@
+.container {
+  width: 80%;
+  /* background-color: white; */
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h3 {
+  background-color: antiquewhite;
+  padding: 20px;
+  cursor: pointer;
+}
+
+h4 {
+  /* background-color: antiquewhite; */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.background-image {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./images/picture.webp");
+  background-size: cover;
+}
+
+/* Default */
 .App {
   text-align: center;
 }
