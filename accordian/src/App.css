@@ -6,6 +6,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow-y: auto;
+  max-height: calc(100vh - 100px); /* Adjust 100px as necessary */
 }
 
 h3 {
@@ -21,6 +23,7 @@ h4 {
 }
 
 .background-image {
+  /* position: fixed; */
   width: 100%;
   height: 100vh;
   background-image: url("./images/picture.webp");
