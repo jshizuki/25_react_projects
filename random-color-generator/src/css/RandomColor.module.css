@@ -12,3 +12,10 @@
   box-shadow: 0 0 0 !important;
   font-weight: bolder !important;
 }
+
+h1 {
+  font-family: "Playwrite MX", cursive;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+}

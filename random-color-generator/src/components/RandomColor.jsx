@@ -21,13 +21,14 @@ function RandomColor() {
 
   return (
     <div className={styles.container} style={{ backgroundColor: rgbColor }}>
-      <Button
+      {/* <Button
         className={styles.button}
         variant="contained"
         onClick={handleColorGeneration}
       >
         Generate color
-      </Button>
+      </Button> */}
+      <h1 onClick={handleColorGeneration}>What's your color today?</h1>
     </div>
   );
 }
