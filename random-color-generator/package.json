@@ -19,8 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-accordian": "cd twenty-react-projects/random-color-generator && npm run build",
-    "deploy-accordian": "gh-pages -d twenty-react-projectss/accordian/build -b gh-pages -o '25_react_projects/random-color-generator'"
+    "build-random-color-generator": "cd twenty-react-projects/random-color-generator && npm run build",
+    "deploy-random-color-generator": "gh-pages -d twenty-react-projectss/random-color-generator/build -b gh-pages -o '25_react_projects/random-color-generator'"
   },
   "eslintConfig": {
     "extends": [
