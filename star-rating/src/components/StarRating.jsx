@@ -4,30 +4,30 @@ import "../css/StarRating.css";
 
 export default function StarRating({ numberOfStars }) {
   const booleanValues = Array(numberOfStars).fill(false);
+  const [rating, setRating] = useState(booleanValues);
 
-  const [stars, setStars] = useState(booleanValues);
-
-  const handleStarHover = (clickedIndex) => {
-    setStars((prev) => {
-      return prev.map((_, index) => index <= clickedIndex)
+  const handleRating = (clickedIndex) => {
+    setRating((prev) => {
+      return prev.map((_, index) => index <= clickedIndex);
     });
   };
 
-  console.log(stars);
-
   return (
-    <div className="container">
-      {stars.map((star, index) => {
-        return (
-          <div
-            key={index}
-            className="star"
-            onClick={() => handleStarHover(index)}
-          >
-            {star === false ? <IoIosStarOutline /> : <IoIosStar />}
-          </div>
-        );
-      })}
+    <div>
+      <div className="background" onClick={() => handleRating(-1)}></div>
+      <div className="stars">
+        {rating.map((value, index) => {
+          return (
+            <div
+              key={index}
+              className="star"
+              onClick={() => handleRating(index)}
+            >
+              {value ? <IoIosStar /> : <IoIosStarOutline />}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
