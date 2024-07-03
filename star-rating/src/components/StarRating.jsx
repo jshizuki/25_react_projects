@@ -12,6 +12,12 @@ export default function StarRating({ numberOfStars }) {
     });
   };
 
+  const handleHover = (hoveredIndex) => {
+    setRating((prev) => {
+      return prev.map((_, index) => index <= hoveredIndex);
+    });
+  }
+
   return (
     <div>
       <div className="background" onClick={() => handleRating(-1)}></div>
@@ -21,6 +27,7 @@ export default function StarRating({ numberOfStars }) {
             <div
               key={index}
               className="star"
+              onMouseOver={() => handleHover(index)}
               onClick={() => handleRating(index)}
             >
               {value ? <IoIosStar /> : <IoIosStarOutline />}
