@@ -1,4 +1,4 @@
-## Accordion
+## Star Rating
 
 A React project - when hovered empty stars change to filled ones, and when clicked it will set the rating.  To revert back to zero rating, click anywhere on the background.
 
