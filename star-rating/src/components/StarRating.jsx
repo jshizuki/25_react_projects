@@ -6,17 +6,19 @@ export default function StarRating({ numberOfStars }) {
   const booleanValues = Array(numberOfStars).fill(false);
   const [rating, setRating] = useState(booleanValues);
 
-  const handleRating = (clickedIndex) => {
+  const setValues = (selectedIndex) => {
     setRating((prev) => {
-      return prev.map((_, index) => index <= clickedIndex);
+      return prev.map((_, index) => index <= selectedIndex);
     });
   };
 
+  const handleRating = (clickedIndex) => {
+    setValues(clickedIndex);
+  };
+
   const handleHover = (hoveredIndex) => {
-    setRating((prev) => {
-      return prev.map((_, index) => index <= hoveredIndex);
-    });
-  }
+    setValues(hoveredIndex);
+  };
 
   return (
     <div>
