@@ -1,4 +1,4 @@
-## Accordion
+## Random Color Generator
 
 A React project - generate a random color and display RGB/ HEX accordingly
 
