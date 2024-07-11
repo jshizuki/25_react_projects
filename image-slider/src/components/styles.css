@@ -53,3 +53,35 @@
 .current {
   background-color: darkgray;
 }
+
+@media (max-width: 1100px) {
+  .container {
+    width: 95%;
+    height: 40vh;
+  }
+
+  .arrow {
+    font-size: xx-large;
+  }
+
+  .arrow-left {
+    left: 9rem;
+    bottom: -3rem;
+  }
+
+  .arrow-right {
+    right: 9rem;
+    bottom: -3rem;
+  }
+
+  .circle-indicator {
+    width: 3px;
+    height: 3px;
+    border-radius: 0%;
+    margin: 2px;
+  }
+
+  .current-image {
+    border-radius: 5px;
+  }
+}

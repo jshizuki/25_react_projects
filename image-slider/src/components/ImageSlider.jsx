@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { getImages } from "../utils/pexelsApi";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import "./styles.css";
 
 function ImageSlider() {
@@ -12,6 +15,14 @@ function ImageSlider() {
       setPhotoData(images);
     });
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextImage(currentImage);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentImage]);
 
   const handlePreviousImage = (photoIndex) => {
     setCurrentImage(photoIndex === 0 ? photoData.length - 1 : currentImage - 1);
@@ -27,7 +38,7 @@ function ImageSlider() {
 
   return (
     <div className="container">
-      <IoIosArrowRoundBack
+      <MdOutlineKeyboardArrowLeft
         className="arrow arrow-left"
         onClick={() => handlePreviousImage(currentImage)}
       />
@@ -45,7 +56,7 @@ function ImageSlider() {
           />
         );
       })}
-      <IoIosArrowRoundForward
+      <MdOutlineKeyboardArrowRight
         className="arrow arrow-right"
         onClick={() => handleNextImage(currentImage)}
       />
