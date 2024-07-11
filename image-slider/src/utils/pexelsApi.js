@@ -4,7 +4,11 @@ export const getImages = () => {
   const client = createClient(process.env.REACT_APP_PEXELS_API_KEY);
 
   return client.photos
-    .search({ query: "freedive", orientation: "landscape", per_page: 8 })
+    .search({
+      query: "longboard women",
+      orientation: "landscape",
+      per_page: 8,
+    })
     .then((response) => {
       return response.photos.map((photoData) => ({
         id: photoData.id,

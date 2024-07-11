@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getImages } from "../utils/pexelsApi";
-import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import "./styles.css";
 
 function ImageSlider() {
@@ -21,16 +21,20 @@ function ImageSlider() {
     setCurrentImage(photoIndex === photoData.length - 1 ? 0 : currentImage + 1);
   };
 
+  const handleIndicatorClick = (photoIndex) => {
+    setCurrentImage(photoIndex);
+  };
+
   return (
     <div className="container">
-      <IoIosArrowDropleft
+      <IoIosArrowRoundBack
         className="arrow arrow-left"
         onClick={() => handlePreviousImage(currentImage)}
       />
       {photoData.map((photoItem, index) => {
         return (
           <img
-          key={photoItem.id}
+            key={photoItem.id}
             src={photoItem.src}
             alt={photoItem.alt}
             className={
@@ -41,10 +45,25 @@ function ImageSlider() {
           />
         );
       })}
-      <IoIosArrowDropright
+      <IoIosArrowRoundForward
         className="arrow arrow-right"
         onClick={() => handleNextImage(currentImage)}
       />
+      <div className="circle-indicators">
+        {photoData.map((_, index) => {
+          return (
+            <button
+              key={index}
+              onClick={() => handleIndicatorClick(index)}
+              className={
+                currentImage === index
+                  ? "circle-indicator current"
+                  : "circle-indicator"
+              }
+            ></button>
+          );
+        })}
+      </div>
     </div>
   );
 }
