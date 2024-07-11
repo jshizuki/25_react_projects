@@ -1,26 +1,15 @@
-export const getImages = () => {
-  const url =
-    "https://api.pexels.com/v1/search?query=Ocean&orientation=landscape";
+import { createClient } from "pexels";
 
-  return fetch(url, {
-    headers: {
-      Authorization: process.env.PEXELS_API_KEY,
-    },
-  })
-    .then(
-      (response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(`Request failed with status ${response.status}!`);
-      },
-      (networkError) => console.log(networkError.message)
-    )
-    .then((jsonResponse) => {
-      return jsonResponse.photos.map((photoData) => ({
+export const getImages = () => {
+  const client = createClient(process.env.REACT_APP_PEXELS_API_KEY);
+
+  return client.photos
+    .search({ query: "freedive", orientation: "landscape", per_page: 8 })
+    .then((response) => {
+      return response.photos.map((photoData) => ({
         id: photoData.id,
-        url: photoData.src["medium"],
         alt: photoData.alt,
+        src: photoData.src.large,
       }));
     });
 };
