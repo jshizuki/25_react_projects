@@ -16,13 +16,13 @@ function ImageSlider() {
     });
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNextImage(currentImage);
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     handleNextImage(currentImage);
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, [currentImage]);
+  //   return () => clearInterval(interval);
+  // }, [currentImage]);
 
   const handlePreviousImage = (photoIndex) => {
     setCurrentImage(photoIndex === 0 ? photoData.length - 1 : currentImage - 1);

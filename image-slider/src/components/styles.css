@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+.arrow:hover {
+  color: #708090
+}
+
 .arrow-left {
   left: -4rem;
 }
