@@ -24,6 +24,22 @@ function ImageSlider() {
   //   return () => clearInterval(interval);
   // }, [currentImage]);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowLeft") {
+        handlePreviousImage(currentImage);
+      } else if (event.key === "ArrowRight") {
+        handleNextImage(currentImage);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  });
+
   const handlePreviousImage = (photoIndex) => {
     setCurrentImage(photoIndex === 0 ? photoData.length - 1 : currentImage - 1);
   };
