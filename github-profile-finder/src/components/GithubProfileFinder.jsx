@@ -1,63 +1,36 @@
 import { useState, useEffect } from "react";
-import { getProfile } from "../utils/githubApi";
+// API
+import { getUserProfile } from "../utils/githubApi";
+// Helper methods
+import { formatJoinDate } from "../utils/helpers";
+import { formatSingularPlural } from "../utils/helpers";
+// CSS
 import "./styles.scss";
 // Material UI
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+// React Icons
 import { GoPeople } from "react-icons/go";
 
 function GithubProfileFinder() {
-  const [username, setUserName] = useState("jshizuki");
-  const [profile, setProfile] = useState({
-    name: "",
-    avatar: "",
-    bio: "",
-    followers: null,
-    following: null,
-    joinDate: null,
-    numberOfPublicRepos: null,
-    profileLink: "",
-  });
-
-  console.log(profile);
+  const [username, setUsername] = useState("jshizuki");
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
-    getProfile(username).then((profileInfo) => {
+    getUserProfile(username).then((profileInfo) => {
       setProfile(profileInfo);
     });
   }, []);
 
   const handleUserInput = (event) => {
-    setUserName(event.target.value);
+    setUsername(event.target.value);
   };
-
-  const handleJoinDate = (dateString) => {
-    const date = new Date(dateString);
-    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-  };
-
-  const handleSingularPlural = (follower) => {
-    return follower === 1 ? `follower` : `followers`
-  }
 
   const handleSearch = async (event) => {
     event.preventDefault();
-
-    try {
-      const data = await getProfile(username);
-
-      setProfile({
-        name: data.name,
-        username: data.username,
-        avatar: data.avatar,
-        bio: data.bio,
-        followers: data.followers,
-        following: data.following,
-        joinDate: data.joinDate,
-        numberOfPublicRepos: data.numberOfPublicRepos,
-        profileLink: data.profileLink,
-      });
-    } catch (error) {}
+    getUserProfile(username).then((data) => {
+      setProfile(data);
+    });
   };
 
   return (
@@ -91,7 +64,7 @@ function GithubProfileFinder() {
             <h4>{profile.bio}</h4>
             <p>
               <b>Join Date: </b>
-              {handleJoinDate(profile.joinDate)}
+              {formatJoinDate(profile.joinDate)}
             </p>
             <p>
               <b>Public Repositories: </b>
@@ -100,9 +73,10 @@ function GithubProfileFinder() {
           </div>
 
           <div className="followers-following">
-            <GoPeople className="react-icon"/>
+            <GoPeople className="react-icon" />
             <p>
-              <b>{profile.followers}</b> {handleSingularPlural(profile.followers)}
+              <b>{profile.followers}</b>{" "}
+              {formatSingularPlural(profile.followers)}
             </p>
             <p>
               <b>{profile.following}</b> following
