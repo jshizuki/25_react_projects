@@ -13,13 +13,17 @@ export const getProfile = async (searchInput) => {
       },
     });
 
+    console.log(response)
     const responseData = response.data;
 
     return {
       username: responseData.login,
+      name: responseData.name,
       avatar: responseData.avatar_url,
+      bio: responseData.bio,
       joinDate: responseData.created_at,
       numberOfPublicRepos: responseData.public_repos,
+      profileLink: responseData.html_url,
       followers: responseData.followers,
       following: responseData.following,
     };
