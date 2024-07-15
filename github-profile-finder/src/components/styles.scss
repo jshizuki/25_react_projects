@@ -16,6 +16,22 @@
   max-height: calc(100vh - 100px); /* Adjust 100px as necessary */
 }
 
+.custom-searchbar {
+  .MuiOutlinedInput-root {
+    color: whitesmoke; /* Change input color */
+    fieldset {
+      border: 2px solid whitesmoke !important;
+    }
+  }
+  .MuiInputLabel-root {
+    color: whitesmoke; /* Change label color */
+    &.Mui-focused {
+      color: whitesmoke !important;
+      font-weight: bold;
+    }
+  }
+}
+
 .display-container {
   // background-color: whitesmoke;
   background-image: url("https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
@@ -60,7 +76,8 @@
 }
 
 .visit-profile-button:hover {
-  background-color: lightgray !important;
+  background-color: whitesmoke !important;
+  opacity: 0.8;
 }
 
 .rest-info {

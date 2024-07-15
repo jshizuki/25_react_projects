@@ -47,6 +47,7 @@ function GithubProfileFinder() {
           value={username}
           onChange={handleUserInput}
           margin="normal"
+          className="custom-searchbar"
         />
       </form>
       <div className="display-container">
