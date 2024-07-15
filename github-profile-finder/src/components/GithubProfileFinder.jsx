@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import { GoPeople } from "react-icons/go";
 
 function GithubProfileFinder() {
-  const [username, setUsername] = useState("jshizuki");
+  const [username, setUsername] = useState("lewagon");
   const [profile, setProfile] = useState({});
 
   useEffect(() => {
@@ -29,7 +29,11 @@ function GithubProfileFinder() {
   const handleSearch = async (event) => {
     event.preventDefault();
     getUserProfile(username).then((data) => {
-      setProfile(data);
+      if (Object.values(data).every((value) => value !== undefined)) {
+        setProfile(data);
+      } else {
+        window.alert("User not found");
+      }
     });
   };
 
