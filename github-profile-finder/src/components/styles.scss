@@ -4,10 +4,11 @@
   background-image: url("https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   filter: grayscale(100%);
   opacity: 0.5;
+  position: fixed;
 }
 
 .container {
-  width: 40%;
+  // background-color: red;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -32,14 +33,24 @@
   }
 }
 
-.display-container {
-  // background-color: whitesmoke;
+.display-container, .custom-modal {
   background-image: url("https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  // background-color: darkblue;
+  width: 480px;
+  height: 550px;
   margin: 10px;
   padding: 10px;
-  opacity: 0.8;
+  opacity: 0.9;
   border: 2px solid darkgrey;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-info {
+  // background-color: aqua;
+  width: 70%;
 }
 
 .user-info {
@@ -53,7 +64,7 @@
 }
 
 .username-name {
-  width: 40%;
+  // width: 40%;
   margin: auto;
   h3, h4 {
     // background-color: yellowgreen;
@@ -71,7 +82,7 @@
   border: solid 1px darkgray !important;
   color: black !important;
   font-weight: bold !important;
-  width: 40%;
+  width: 60%;
   margin: 10px 0px 10px 0px !important;
 }
 
@@ -82,7 +93,7 @@
 
 .rest-info {
   // background-color: red;
-  width: 40%;
+  width: 60%;
   text-align: start;
   font-weight: 400;
   margin: auto;
@@ -100,7 +111,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 60%;
   margin: auto;
   margin-bottom: 10px;
 
@@ -118,4 +129,10 @@
   top: 2px;
   left: 0px;
   color: whitesmoke !important;
+}
+
+.custom-modal p {
+  color: whitesmoke;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }

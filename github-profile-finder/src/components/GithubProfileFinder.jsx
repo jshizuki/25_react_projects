@@ -2,15 +2,16 @@ import { useState, useEffect } from "react";
 // Components
 import SearchBar from "./SearchBar";
 import ProfileDisplay from "./ProfileDisplay";
+import Modal from "./Modal";
 // API
 import { getUserProfile } from "../utils/githubApi";
 // CSS
 import "./styles.scss";
 
-
 function GithubProfileFinder() {
   const [username, setUsername] = useState("lewagon");
   const [profile, setProfile] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     getUserProfile(username).then((profileInfo) => {
@@ -27,8 +28,9 @@ function GithubProfileFinder() {
     getUserProfile(username).then((data) => {
       if (Object.values(data).every((value) => value !== undefined)) {
         setProfile(data);
+        setIsModalOpen(false);
       } else {
-        window.alert("User not found");
+        setIsModalOpen(true);
       }
     });
   };
@@ -40,7 +42,11 @@ function GithubProfileFinder() {
         handleSearch={handleSearch}
         handleUserInput={handleUserInput}
       />
-      <ProfileDisplay profile={profile}/>
+      {isModalOpen ? (
+        <Modal />
+      ) : (
+        <ProfileDisplay profile={profile} />
+      )}
     </div>
   );
 }

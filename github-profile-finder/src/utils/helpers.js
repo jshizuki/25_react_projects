@@ -1,6 +1,5 @@
 export const formatJoinDate = (dateString) => {
   const date = new Date(dateString);
-  console.log(date)
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };
 
