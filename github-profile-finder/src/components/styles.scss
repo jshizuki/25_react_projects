@@ -13,8 +13,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // overflow-y: auto;
-  max-height: calc(100vh - 100px); /* Adjust 100px as necessary */
 }
 
 .custom-searchbar {
@@ -33,11 +31,12 @@
   }
 }
 
-.display-container, .custom-modal {
-  background-image: url("https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+.display-container,
+.custom-modal {
   // background-color: darkblue;
+  background-image: url("https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   width: 480px;
-  height: 550px;
+  height: 580px;
   margin: 10px;
   padding: 10px;
   opacity: 0.9;
@@ -46,6 +45,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px); /* Adjust 100px as necessary */
 }
 
 .all-info {
@@ -66,7 +67,8 @@
 .username-name {
   // width: 40%;
   margin: auto;
-  h3, h4 {
+  h3,
+  h4 {
     // background-color: yellowgreen;
     color: whitesmoke;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -101,7 +103,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
   h4 {
-    margin: 4px 0px 4px 0px;;
+    margin: 4px 0px 4px 0px;
   }
 }
 
@@ -118,7 +120,7 @@
   p {
     // background-color: green;
     margin: 0px;
-    padding-left: 10px;
+    padding-left: 15px;
     color: whitesmoke;
   }
 }
@@ -135,4 +137,39 @@
   color: whitesmoke;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 500px) {
+  .display-container,
+  .custom-modal {
+    min-height: 620px;
+    width: 300px;
+    height: 550px;
+  }
+
+  .custom-searchbar {
+    .MuiOutlinedInput-root {
+      color: #777b7e; /* Change input color */
+      fieldset {
+        border: 2px solid #777b7e !important;
+      }
+    }
+    .MuiInputLabel-root {
+      color: #777b7e; /* Change label color */
+      &.Mui-focused {
+        color: #777b7e !important;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .all-info {
+    width: 100%;
+  }
+
+  .visit-profile-button,
+  .rest-info,
+  .followers-following {
+    width: 70%;
+  }
 }
